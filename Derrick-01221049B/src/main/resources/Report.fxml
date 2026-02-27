@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="500.0"
+            prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.template.ui.ReportController"
+            style="-fx-background-color: linear-gradient(to bottom, #1e293b, #0f172a);">
+
+    <!-- ===== TOP SECTION ===== -->
+    <top>
+        <VBox spacing="20"
+              style="-fx-padding: 25;
+                     -fx-background-color: #0f172a;">
+
+            <!-- Title Centered -->
+            <Label text="Student Academic Report"
+                   style="-fx-font-size: 28px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #38bdf8;"
+                   alignment="CENTER"
+                   maxWidth="Infinity"/>
+
+            <!-- Buttons aligned LEFT -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+
+                <Button text="Import CSV File"
+                        onAction="#importCsv"
+                        style="-fx-background-color: #f97316;
+                               -fx-text-fill: white;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 20;
+                               -fx-padding: 10 22;
+                               -fx-cursor: hand;" />
+
+                <Button text="Export CSV File"
+                        onAction="#exportCsv"
+                        style="-fx-background-color: #22c55e;
+                               -fx-text-fill: black;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 20;
+                               -fx-padding: 10 22;
+                               -fx-cursor: hand;" />
+
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- ===== TABLE SECTION ===== -->
+    <center>
+        <VBox style="-fx-padding: 30;">
+
+            <TableView fx:id="reportTable"
+                       VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: #1e293b;
+                              -fx-background-radius: 20;
+                              -fx-border-color: #334155;
+                              -fx-border-radius: 20;
+                              -fx-padding: 10;">
+
+                <columns>
+                    <TableColumn fx:id="reportIdColumn" text="Student ID" prefWidth="120"/>
+                    <TableColumn fx:id="reportNameColumn" text="Full Name" prefWidth="170"/>
+                    <TableColumn fx:id="reportProgrammeColumn" text="Programme" prefWidth="150"/>
+                    <TableColumn fx:id="reportLevelColumn" text="Academic Level" prefWidth="120"/>
+                    <TableColumn fx:id="reportGpaColumn" text="GPA Score" prefWidth="100"/>
+                    <TableColumn fx:id="reportStatusColumn" text="Academic Status" prefWidth="150"/>
+                </columns>
+
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>
